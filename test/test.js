@@ -52,4 +52,21 @@ setup(function(db) {
                 });
             });
     });
+
+    test('options', function(t) {
+        t.plan(4);
+        db.cbatch({sync: true})
+            .del('foo')
+            .put('hello', 'worldz')
+            .exec(function(err) {
+                t.equals(err, null);
+                db.get('foo', function(err) {
+                    t.equals(err.name, 'NotFoundError');
+                });
+                db.get('hello', function(err, value) {
+                    t.equals(err, null);
+                    t.equals(value, 'worldz');
+                });
+            });
+    });
 });

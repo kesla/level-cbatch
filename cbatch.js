@@ -1,6 +1,7 @@
-function Batch(db) {
+function Batch(db, options) {
     this.db = db;
     this.batch = [];
+    this.options = options || {};
 }
 
 Batch.prototype.put = function(key, value) {
@@ -21,11 +22,11 @@ Batch.prototype.del = function(key) {
 }
 
 Batch.prototype.exec = function(callback) {
-    this.db.batch(this.batch, callback);
+    this.db.batch(this.batch, this.options, callback);
 }
 
 module.exports = function(db) {
-    db.cbatch = function() {
-        return new Batch(db);
+    db.cbatch = function(options) {
+        return new Batch(db, options);
     }
 }
