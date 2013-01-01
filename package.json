@@ -1,0 +1,27 @@
+{
+  "author": "David Björklund <david.bjorklund@gmail.com>",
+  "description": "A chainable api for batch() in levelup",
+  "devDependencies": {
+    "levelup": "~0.4.3",
+    "rimraf": "~2.1.1",
+    "tap": "~0.3.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "batch",
+    "levelup"
+  ],
+  "license": "MIT",
+  "main": "cbatch.js",
+  "name": "level-cbatch",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kesla/level-cbatch.git"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "version": "0.0.0"
+}
