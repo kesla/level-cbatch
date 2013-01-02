@@ -1,4 +1,4 @@
-#level-cbatch
+#level-cbatch[![build status](https://secure.travis-ci.org/kesla/level-cbatch.png)](http://travis-ci.org/kesla/level-cbatch)
 
 A chainable api for batch() in levelup
 
